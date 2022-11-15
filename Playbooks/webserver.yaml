@@ -1,0 +1,22 @@
+- hosts: web
+  remote_user: root
+  become: yes
+  tasks: 
+  - name: Upgrade all packages
+    ansible.builtin.yum:
+      name: '*'
+      state: latest
+  - name: install apache
+    yum:
+      name: httpd
+      state: installed
+  - name: create html file
+    shell: echo "this is going to be fun" > /var/www/html/index.html
+    args: 
+      executable: /bin/bash
+    notify: Reload Apache   
+  handlers: 
+    - name: Reload Apache
+      service:
+        name: httpd
+        state: reloaded

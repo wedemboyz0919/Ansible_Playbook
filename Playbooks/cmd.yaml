@@ -1,0 +1,10 @@
+- hosts: web
+  remote_user: root
+  become: yes
+  tasks:
+    - name: curl AWS
+      shell:
+        cmd: curl http://192.168.5.102
+      register: curl
+    - debug: var=curl.stdout_lines  
+

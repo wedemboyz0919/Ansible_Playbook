@@ -1,0 +1,16 @@
+---
+#all:
+#  hosts:
+#    web:
+#      ansible_host: ansiblecue002.sgs.com
+#      ansible_port: 22
+#      ansible_user: root
+#      ansible_ssh_private_key_file: ~/.ssh/id_rsa
+
+all:
+  hosts:
+    web:
+      ansible_host: ansiblecue002.sgs.com
+      ansible_port: 22
+      ansible_user: root
+      ansible_ssh_private_key_file: ~/.ssh/id_rsa

@@ -1,0 +1,9 @@
+- hosts: all
+  vars:
+    basic_var: It def worked. Lol
+    basic_var_1: Another trial
+
+  tasks:
+  - name: Display Value
+    debug:
+      msg: "{{ basic_var }} {{ basic_var_1 }}"

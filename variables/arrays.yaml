@@ -1,0 +1,12 @@
+- hosts: all
+  vars:
+    courses:
+      - yoruba
+      - english
+      - maths
+      - babalawo
+
+  tasks:
+  - name: Display Value
+    debug:
+      msg: "{{ courses [3] }}"
